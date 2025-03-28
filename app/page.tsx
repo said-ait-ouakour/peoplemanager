@@ -81,7 +81,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 p-5">
         {/* Hero Section */}
         <section className="py-20 md:py-32">
           <div className="container">

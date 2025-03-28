@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-gray-900">
+    <div className="flex min-h-screen flex-col bg-white text-gray-900 pl-3">
       {/* Header/Navigation */}
       <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white/80 backdrop-blur-sm">
         <div className="container flex h-24 items-center justify-between">

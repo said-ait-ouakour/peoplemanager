@@ -10,7 +10,7 @@ import { useState } from "react"
 
 export default function Contact() {
   const pathname = usePathname();
-  
+
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +18,7 @@ export default function Contact() {
     company: '',
     message: ''
   });
-  
+
   // Submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -36,7 +36,7 @@ export default function Contact() {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.company) {
       setSubmitStatus('error');
@@ -55,7 +55,7 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
-    
+
     try {
       const response = await fetch('https://hook.eu2.make.com/8exvmjey7eqh6slpasxg8bo1pib7i5zd', {
         method: 'POST',
@@ -64,11 +64,11 @@ export default function Contact() {
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }
-      
+
       // Success
       setSubmitStatus('success');
       setFormData({ name: '', email: '', company: '', message: '' });
@@ -110,18 +110,18 @@ export default function Contact() {
 
         {/* Contact Form Section */}
         <section className="py-8 bg-white">
-          <div className="container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-full min-h-[600px] min-w-[700px] w-full rounded-xl overflow-hidden shadow-xl">
-                <Image 
-                  src="/apply-access-neon.png" 
-                  alt="Apply for Access" 
-                  fill 
-                  className="object-cover object-right" 
+          <div className="container px-4 mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+              <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/apply-access-neon.png"
+                  alt="Apply for Access"
+                  fill
+                  className="object-cover object-center"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div className="p-6 text-white">
+                  <div className="p-4 md:p-6 text-white">
                     <p className="text-lg font-bold">Exclusive access</p>
                     <p>For businesses ready to transform their teams</p>
                   </div>
@@ -129,24 +129,24 @@ export default function Contact() {
               </div>
 
               <div className="space-y-6">
-                <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200 transition-all duration-300 hover:shadow-2xl">
-                  <h3 className="text-2xl font-bold mb-6 text-center">Apply for Access</h3>
-                  
+                <div className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-xl border border-gray-200 transition-all duration-300 hover:shadow-2xl">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-6 text-center">Apply for Access</h3>
+
                   {/* Form Status Messages */}
                   {submitStatus === 'success' && (
                     <div className="mb-6 p-3 bg-green-50 border border-green-200 rounded-md flex items-center text-green-700">
-                      <CheckCircle className="h-5 w-5 mr-2" />
-                      <p>Application submitted successfully! We'll be in touch soon.</p>
+                      <CheckCircle className="h-5 w-5 mr-2 flex-shrink-0" />
+                      <p className="text-sm">Application submitted successfully! We'll be in touch soon.</p>
                     </div>
                   )}
-                  
+
                   {submitStatus === 'error' && (
                     <div className="mb-6 p-3 bg-red-50 border border-red-200 rounded-md flex items-center text-red-700">
-                      <AlertCircle className="h-5 w-5 mr-2" />
-                      <p>{errorMessage}</p>
+                      <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0" />
+                      <p className="text-sm">{errorMessage}</p>
                     </div>
                   )}
-                  
+
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="grid gap-2">
                       <label htmlFor="name" className="text-sm font-medium">
@@ -206,28 +206,28 @@ export default function Contact() {
                       type="submit"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Submitting...' : 'Submit Application'} 
+                      {isSubmitting ? 'Submitting...' : 'Submit Application'}
                       {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
                     </Button>
                   </form>
                 </div>
 
-                <div className="space-y-6 mt-8">
-                  <h3 className="text-xl font-bold">📬 Contact Details</h3>
+                <div className="space-y-4 mt-6">
+                  <h3 className="text-lg sm:text-xl font-bold">📬 Contact Details</h3>
                   <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-[#9333EA] mt-1" />
+                    <Mail className="h-5 w-5 text-[#9333EA] mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Email:</p>
-                      <a href="mailto:info@peoplemanager.ai" className="text-[#9333EA] hover:underline">
+                      <a href="mailto:info@peoplemanager.ai" className="text-[#9333EA] hover:underline text-sm sm:text-base">
                         info@peoplemanager.ai
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-[#9333EA] mt-1" />
+                    <MapPin className="h-5 w-5 text-[#9333EA] mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Registered Address:</p>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 text-sm sm:text-base">
                         PeopleManager.ai
                         <br />
                         FDRK1704, Compass Building

@@ -1,96 +1,21 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Shield, Lock, FileText, Eye, Bell, Database } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { usePathname } from "next/navigation"
+import Header from "@/components/header"
 
 export default function Security() {
+  const pathname = usePathname();
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white/80 backdrop-blur-sm flex justify-center">
-        <div className="container flex h-24 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link href="/">
-              <Image
-                src="/logo-full.png"
-                alt="PeopleManager.ai Logo"
-                width={300}
-                height={300}
-                className="h-16 w-auto"
-              />
-            </Link>
-          </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link
-              href="/features"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
-            >
-              Features
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/onboarding"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
-            >
-              Onboarding
-            </Link>
-            <Link
-              href="/about"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
-            >
-              About
-            </Link>
-            <Link
-              href="/case-studies"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
-            >
-              Case Studies
-            </Link>
-            <Link href="/security" className="text-sm font-medium text-[#9333EA] transition-colors duration-300">
-              Security
-            </Link>
-            <Button variant="outline" className="ml-2 transition-all duration-300 hover:border-[#9333EA]/70">
-              Login
-            </Button>
-            <Button className="bg-[#9333EA] hover:bg-[#7E22CE] transition-all duration-300 transform hover:scale-105">
-              Book a Demo
-            </Button>
-          </nav>
-          <Button variant="outline" size="icon" className="md:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </Button>
-        </div>
-      </header>
+      <Header currentPath={`${pathname}`} />
 
       <main className="flex-1 flex flex-col items-center">
         {/* Hero Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9333EA]/10 rounded-full text-[#9333EA] text-xs font-bold tracking-wider mb-4">
@@ -299,7 +224,7 @@ export default function Security() {
         </section>
 
         {/* Final CTA Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-black mb-6">

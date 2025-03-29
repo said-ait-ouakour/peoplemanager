@@ -11,7 +11,7 @@ export default function About() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
       {/* Header/Navigation */}
-     <Header currentPath={`${pathname}`} />
+      <Header currentPath={`${pathname}`} />
 
       <main className="flex-1 flex flex-col items-center">
         {/* Hero Section */}
@@ -173,18 +173,31 @@ export default function About() {
                   </div>
                   <h2 className="text-3xl font-black">What We Believe</h2>
                 </div>
+                <p className="text-xl text-gray-700 mb-6">
+                  Our core principles guide everything we do at PeopleManager.ai.
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-[#9333EA]/5 p-6 rounded-lg border border-[#9333EA]/20">
-                    <p className="text-lg font-bold">You shouldn't hope people perform—you should know.</p>
+                    <p className="text-lg font-bold">Clarity Beats Talent</p>
+                    <p className="text-sm text-gray-600 mt-2">
+                      Clear processes and expectations outperform raw talent every time.
+                    </p>
                   </div>
                   <div className="bg-[#00BFA5]/5 p-6 rounded-lg border border-[#00BFA5]/20">
-                    <p className="text-lg font-bold">Every staff member deserves clear feedback.</p>
+                    <p className="text-lg font-bold">No More Guesswork</p>
+                    <p className="text-sm text-gray-600 mt-2">
+                      Data-driven decisions eliminate the need for assumptions.
+                    </p>
                   </div>
                   <div className="bg-[#F5C518]/5 p-6 rounded-lg border border-[#F5C518]/20">
-                    <p className="text-lg font-bold">Sales should be scalable.</p>
+                    <p className="text-lg font-bold">Data Over Drama</p>
+                    <p className="text-sm text-gray-600 mt-2">
+                      We let metrics tell the story, not opinions or politics.
+                    </p>
                   </div>
                   <div className="bg-[#3B82F6]/5 p-6 rounded-lg border border-[#3B82F6]/20">
-                    <p className="text-lg font-bold">Training isn't one-and-done. It's daily.</p>
+                    <p className="text-lg font-bold">Train Daily</p>
+                    <p className="text-sm text-gray-600 mt-2">Excellence isn't an event—it's a consistent practice.</p>
                   </div>
                 </div>
                 <div className="bg-gradient-to-r from-[#9333EA]/10 to-white p-6 rounded-lg">
@@ -193,10 +206,10 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="relative h-[500px] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative h-[500px] rounded-xl overflow-hidden shadow-xl border border-gray-100">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f3f551af-b5db-4b5d-88b4-6c8b7581534a-e4i2TNRFmHGO7bSW1hl0vJJmsOBAuw.png"
-                  alt="Team Belief Wall"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/c9c2547e-e000-4e00-8fc8-64fc3d042c43-8kRGA6ELBBk6Lkca9BLgQef3qWnkr4.png"
+                  alt="PeopleManager.ai Values Wall"
                   fill
                   className="object-cover"
                 />
@@ -268,7 +281,7 @@ export default function About() {
         </section>
 
         {/* Want In Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-black mb-6">Want In?</h2>

@@ -16,7 +16,7 @@ export default function CaseStudies() {
 
       <main className="flex-1 flex flex-col items-center">
         {/* Hero Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9333EA]/10 rounded-full text-[#9333EA] text-xs font-bold tracking-wider mb-4">
@@ -262,7 +262,7 @@ export default function CaseStudies() {
         </section>
 
         {/* CTA Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-black mb-6">Want Your Name on This List?</h2>

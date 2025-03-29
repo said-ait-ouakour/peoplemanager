@@ -10,6 +10,8 @@ import {
   Trophy,
   LayoutDashboard,
   CheckCircle,
+  Shield,
+  Rocket,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { usePathname } from "next/navigation"
@@ -24,7 +26,7 @@ export default function Features() {
 
       <main className="flex-1 flex flex-col items-center">
         {/* Hero Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-6">
@@ -33,14 +35,13 @@ export default function Features() {
               <p className="text-xl text-gray-700 mb-8">
                 We don't just train your team. We transform them into a precision performance machine.
               </p>
-              <div className="relative h-[300px] md:h-[400px] w-full rounded-xl overflow-hidden shadow-xl mb-12">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2b3cc7cc-b5d0-4b5d-9c5b-f9c5784ba19b-VmwVR2PY7XmBwpV8PF1CSqNK3cN5BH.png"
-                  alt="PeopleManager.ai Features"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
+              <div className="relative h-[300px] md:h-[400px] w-full rounded-xl overflow-hidden shadow-xl mb-12 border border-gray-100">                <Image
+                src="/features-hero-banner.png"
+                alt="PeopleManager.ai Features"
+                fill
+                className="object-cover object-center"
+                priority
+              />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div className="p-6 text-white">
                     <p className="text-lg font-bold">A complete system for excellence</p>
@@ -412,8 +413,230 @@ export default function Features() {
           </div>
         </section>
 
+
+        {/* Feature 7 */}
+        <section className="py-16 bg-white">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#3B82F6]/10 rounded-full text-[#3B82F6] text-xs font-bold tracking-wider mb-2">
+                  LEGAL PROTECTION
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white flex items-center justify-center font-bold shadow-md">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <h2 className="text-3xl font-black">🔒 7. Compliance Intelligence – Always On, Always Accurate</h2>
+                </div>
+                <p className="text-xl text-gray-700">
+                  We don't just monitor calls—we monitor the law. Every conversation is auto-audited against your
+                  industry's compliance standards.
+                </p>
+                <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                  <p className="font-bold mb-4">Included:</p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-[#3B82F6] mt-0.5 flex-shrink-0" />
+                      <span>Script & Disclosure Checks</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#3B82F6] mt-0.5 flex-shrink-0 font-bold">
+                        ⚖️
+                      </div>
+                      <span>Legal Phrasing Detection (e.g. "advice", "guarantee", "authorised")</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#3B82F6] mt-0.5 flex-shrink-0 font-bold">
+                        🔍
+                      </div>
+                      <span>Compliance Scores in Daily Reports</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#3B82F6] mt-0.5 flex-shrink-0 font-bold">
+                        🔔
+                      </div>
+                      <span>Auto-alerts for breaches</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#3B82F6] mt-0.5 flex-shrink-0 font-bold">
+                        📂
+                      </div>
+                      <span>Audit-ready logs for any call, anytime</span>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-lg font-bold text-[#3B82F6]">It's your legal safety net—on autopilot.</p>
+              </div>
+              <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-gray-100">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/392d0484-c9c2-4c9c-8ea9-f8ea212988a6-sB3ihezJ3gMoFEJVgM9AWgZHjXVvb3.png"
+                  alt="Compliance Intelligence"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute top-4 right-4 bg-[#3B82F6]/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  COMPLIANCE GUARD
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature 8 */}
+        <section className="py-16 bg-gray-50">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1 relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-gray-100">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f2508f33-749a-4749-acf9-42cf1b076b0a-kI85rIu7aRdoNQzYB4I1I4hvVG3w1M.png"
+                  alt="Modular Business Scaling"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute top-4 right-4 bg-[#F5C518]/90 text-black text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  FRANCHISE READY
+                </div>
+              </div>
+              <div className="space-y-6 order-1 md:order-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F5C518]/10 rounded-full text-[#F5C518] text-xs font-bold tracking-wider mb-2">
+                  SCALE WITHOUT LIMITS
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-r from-[#F5C518] to-[#F0B400] text-white flex items-center justify-center font-bold shadow-md">
+                    <Rocket className="h-6 w-6" />
+                  </div>
+                  <h2 className="text-3xl font-black">🧱 8. Modular Business Scaling – Your Company, Packaged</h2>
+                </div>
+                <p className="text-xl text-gray-700">
+                  For an additional fee, we can build your entire business system into a scalable AI training module.
+                </p>
+                <div className="bg-white p-6 rounded-lg border border-gray-200">
+                  <p className="font-bold mb-4">We extract:</p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#F5C518] mt-0.5 flex-shrink-0 font-bold">
+                        🧠
+                      </div>
+                      <span>Your processes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#F5C518] mt-0.5 flex-shrink-0 font-bold">
+                        📚
+                      </div>
+                      <span>Your knowledge</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#F5C518] mt-0.5 flex-shrink-0 font-bold">
+                        🎯
+                      </div>
+                      <span>Your best performers' methods</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#F5C518] mt-0.5 flex-shrink-0 font-bold">
+                        📞
+                      </div>
+                      <span>Your calls & scripts</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="h-5 w-5 flex items-center justify-center text-[#F5C518] mt-0.5 flex-shrink-0 font-bold">
+                        🔁
+                      </div>
+                      <span>Your client journey</span>
+                    </li>
+                  </ul>
+                  <p className="mt-6 mb-2">
+                    Then we turn it into a scalable, repeatable AI-driven system—ready to plug into new hires, new
+                    locations, or new companies.
+                  </p>
+                </div>
+                <div className="bg-[#F5C518]/5 p-6 rounded-lg border border-[#F5C518]/20">
+                  <p className="text-lg font-bold mb-2">💡 Want to franchise without the headache?</p>
+                  <p className="text-lg">Just duplicate your module—and scale.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Summary */}
+        <section className="py-16 bg-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-black text-center mb-8">Your 8 Unstoppable Features</h2>
+              <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-lg">
+                <ol className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white flex items-center justify-center font-bold shadow-md">
+                      1
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Training System – Command Center</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#00BFA5] to-[#00A896] text-white flex items-center justify-center font-bold shadow-md">
+                      2
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Role-Play With Real-Time AI Feedback</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white flex items-center justify-center font-bold shadow-md">
+                      3
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Real-Time Monitoring – Live Monitoring</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#F5C518] to-[#F0B400] text-white flex items-center justify-center font-bold shadow-md">
+                      4
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Self-Correcting Staff – 24/7 AI Coaching</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white flex items-center justify-center font-bold shadow-md">
+                      5
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Leaderboards, Forums & Instant Manager Nudges</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#00BFA5] to-[#00A896] text-white flex items-center justify-center font-bold shadow-md">
+                      6
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Mission Control Dashboard</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white flex items-center justify-center font-bold shadow-md">
+                      7
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Compliance Intelligence – Always On, Always Accurate</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-r from-[#F5C518] to-[#F0B400] text-white flex items-center justify-center font-bold shadow-md">
+                      8
+                    </div>
+                    <div className="pt-1">
+                      <p className="font-bold">Modular Business Scaling – Your Company, Packaged</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
-<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
+        <section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl font-black mb-6">Ready to scale precision and print results on repeat?</h2>

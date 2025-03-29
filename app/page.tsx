@@ -69,16 +69,28 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-i0tNE7L83r2qSvnaBOtQFEDWPWv9jN.png"
-                  alt="PeopleManager.ai Dashboard"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-                <div className="absolute top-4 right-4 bg-[#9333EA]/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                  LIVE DASHBOARD
+              <div className="relative h-[400px] w-full flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full max-w-lg relative">
+                    {/* Animated glow effect */}
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#9333EA] to-[#00BFA5] opacity-30 blur-xl animate-pulse"></div>
+                    {/* Logo with bounce animation */}
+                    <Image
+                      src="/logo-full.png"
+                      alt="PeopleManager.ai Logo"
+                      width={600}
+                      height={600}
+                      className="relative w-full h-auto animate-[bounce_6s_ease-in-out_infinite]"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Animated tagline button */}
+                <div className="absolute bottom-0 left-0 right-0 flex justify-center">
+                  <div className="bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white text-xl font-bold px-8 py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 animate-[pulse_3s_ease-in-out_infinite]">
+                    Train. Track. Transform.
+                  </div>
                 </div>
               </div>
             </div>
@@ -468,7 +480,7 @@ export default function Home() {
         <section id="dashboard" className="py-20 bg-[#E6F7F5]">
           <div className="container">
             <div className="grid gap-12 lg:grid-cols-2 items-center">
-              <div className="order-2 lg:order-1 relative h-[500px] w-full rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-[0_20px_50px_rgba(147,51,234,0.3)]">
+              <div className="order-2 lg:order-1 relative h-[500px] w-full rounded-xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(147,51,234,0.3)]">
                 <Image src="/director-dashboard.png" alt="Director Hub Dashboard" fill className="object-contain" />
                 <div className="absolute top-4 right-4 bg-[#9333EA]/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                   LIVE DASHBOARD

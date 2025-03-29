@@ -59,7 +59,9 @@ export default function Home() {
                     size="lg"
                     className="font-medium bg-[#9333EA] hover:bg-[#7E22CE] group transition-all duration-300 transform hover:scale-105"
                   >
-                    Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Link href="/contact">
+                      Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="font-medium group transition-all duration-300">
                     <Link href="/how-it-works">
@@ -69,7 +71,8 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[400px] w-full flex items-center justify-center">
+              <div className="relative h-[400px] w-full flex items-center justify-center mt-[150px] md:mt-0">
+
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-full max-w-lg relative">
                     {/* Animated glow effect */}

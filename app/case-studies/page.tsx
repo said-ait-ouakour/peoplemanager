@@ -106,15 +106,15 @@ export default function CaseStudies() {
                   </p>
                 </div>
               </div>
-              <div className="relative h-[500px] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative h-[250px] w-full md:h-[500px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5QaF1Emrw6sqJRxTQ0Ukx3Pg59r7ds.png"
-                  alt="Command center with performance monitoring"
+                  src="/conversion-rate-comparison.png"
+                  alt="Before and after implementing PeopleManager.ai - From 42% to 91% conversion rate"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute top-4 right-4 bg-[#9333EA]/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                  COMMAND CENTER
+                  TRANSFORMATION
                 </div>
               </div>
             </div>
@@ -275,7 +275,9 @@ export default function CaseStudies() {
                 size="lg"
                 className="font-medium bg-[#9333EA] hover:bg-[#7E22CE] group transition-all duration-300 transform hover:scale-105"
               >
-                Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Link href="/contact">
+                      Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
               </Button>
 
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl mt-12">

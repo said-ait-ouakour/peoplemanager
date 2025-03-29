@@ -400,7 +400,9 @@ export default function Onboarding() {
                   size="lg"
                   className="font-medium bg-[#9333EA] hover:bg-[#7E22CE] group transition-all duration-300 transform hover:scale-105"
                 >
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <Link href="/contact">
+                      Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="font-medium group transition-all duration-300">
                   Talk to the Founder{" "}

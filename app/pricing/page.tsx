@@ -62,7 +62,9 @@ export default function Pricing() {
                   </div>
 
                   <Button className="w-full bg-[#9333EA] hover:bg-[#7E22CE] transition-all duration-300">
-                    Book a Demo
+                    <Link href="/contact">
+                      Book a Demo
+                    </Link>
                   </Button>
                 </div>
 
@@ -120,7 +122,9 @@ export default function Pricing() {
                   <p className="text-gray-500 mb-6">(for organizations with 21-500 staff)</p>
 
                   <Button className="w-full bg-[#9333EA] hover:bg-[#7E22CE] transition-all duration-300">
-                    Book a Demo
+                    <Link href="/contact">
+                      Book a Demo
+                    </Link>
                   </Button>
                 </div>
 
@@ -186,7 +190,9 @@ export default function Pricing() {
                   <p className="text-gray-500 mb-6">(unlimited staff, unlimited scale, infinite ambition)</p>
 
                   <Button className="w-full bg-[#F5C518] hover:bg-[#E0B000] text-black transition-all duration-300">
-                    Book a Demo
+                    <Link href="/contact">
+                      Book a Demo
+                    </Link>
                   </Button>
                 </div>
 
@@ -259,7 +265,9 @@ export default function Pricing() {
                   size="lg"
                   className="font-medium bg-[#9333EA] hover:bg-[#7E22CE] group transition-all duration-300 transform hover:scale-105"
                 >
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <Link href="/contact">
+                    Book a Demo
+                  </Link> <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
             </div>

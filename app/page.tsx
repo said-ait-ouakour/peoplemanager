@@ -32,9 +32,9 @@ export default function Home() {
 
       <main className="flex-1 flex flex-col items-center">
         {/* Hero Section */}
-        <section className="py-20 md:py-32">
+        <section className="pt-20 md:py-32">
           <div className="container">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+            <div className="grid gap-1 gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <div className="space-y-6">
                 <div className="flex items-center gap-2 text-[#9333EA] font-bold text-xl">
                   <Flame className="h-6 w-6" />
@@ -71,27 +71,26 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="relative h-[400px] w-full flex items-center justify-center mt-[150px] md:mt-0">
-
+              <div className="relative h-[300px] md:h-[400px] w-full flex items-center justify-center md:mt-0">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-full max-w-lg relative">
-                    {/* Animated glow effect */}
-                    <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#9333EA] to-[#00BFA5] opacity-30 blur-xl animate-pulse"></div>
-                    {/* Logo with bounce animation */}
+                  <div className="w-[40%] md:w-full max-w-lg relative">
+                    {/* Animated glow effect - hidden on mobile */}
+                    <div className="hidden md:block absolute -inset-1 rounded-full bg-gradient-to-r from-[#9333EA] to-[#00BFA5] opacity-30 blur-xl animate-pulse"></div>
+                    {/* Logo - no animation on mobile */}
                     <Image
                       src="/logo-full.png"
                       alt="PeopleManager.ai Logo"
                       width={600}
                       height={600}
-                      className="relative w-full h-auto animate-[bounce_6s_ease-in-out_infinite]"
+                      className="relative w-full h-auto md:animate-[bounce_6s_ease-in-out_infinite]"
                       priority
                     />
                   </div>
                 </div>
 
-                {/* Animated tagline button */}
-                <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-                  <div className="bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white text-xl font-bold px-8 py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 animate-[pulse_3s_ease-in-out_infinite]">
+                {/* Animated tagline button - smaller on mobile */}
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center">
+                  <div className="bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white text-sm md:text-xl font-bold px-4 md:px-8 py-2 md:py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 md:animate-[pulse_3s_ease-in-out_infinite]">
                     Train. Track. Transform.
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import {
   CheckCircle,
+  Flame,
   Briefcase,
   BarChart3,
   Headphones,
@@ -14,44 +15,61 @@ import {
   MessageSquare,
   Cpu,
   Dna,
-  Flame,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white text-gray-900 pl-3">
+    <div className="flex min-h-screen flex-col bg-white text-gray-900">
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+      <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white/80 backdrop-blur-sm flex justify-center">
         <div className="container flex h-24 items-center justify-between">
           <div className="flex items-center gap-2">
             <Image src="/logo-full.png" alt="PeopleManager.ai Logo" width={300} height={300} className="h-16 w-auto" />
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <Link
-              href="#features"
+              href="/features"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
             >
               Features
             </Link>
             <Link
-              href="#how-it-works"
+              href="/how-it-works"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
             >
               How It Works
             </Link>
             <Link
-              href="#industries"
+              href="/pricing"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
             >
-              Industries
+              Pricing
             </Link>
             <Link
-              href="#dashboard"
+              href="/onboarding"
               className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
             >
-              Dashboard
+              Onboarding
+            </Link>
+            <Link
+              href="/about"
+              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
+            >
+              About
+            </Link>
+            <Link
+              href="/case-studies"
+              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
+            >
+              Case Studies
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-300"
+            >
+              Contact
             </Link>
             <Button variant="outline" className="ml-2 transition-all duration-300 hover:border-[#9333EA]/70">
               Login
@@ -81,7 +99,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1 p-5">
+      <main className="flex-1 flex flex-col items-center">
         {/* Hero Section */}
         <section className="py-20 md:py-32">
           <div className="container">
@@ -113,14 +131,16 @@ export default function Home() {
                     Book a Demo <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <Button size="lg" variant="outline" className="font-medium group transition-all duration-300">
-                    See How It Works{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Link href="/how-it-works">
+                      See How It Works{" "}
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   </Button>
                 </div>
               </div>
               <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl">
                 <Image
-                  src="/sales-dashboard.png"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-i0tNE7L83r2qSvnaBOtQFEDWPWv9jN.png"
                   alt="PeopleManager.ai Dashboard"
                   fill
                   className="object-contain"
@@ -276,7 +296,7 @@ export default function Home() {
                     </div>
                   </li>
                 </ul>
-                <p className="text-lg font-medium ml-14">If you're know tomorrow morning if someone is off.</p>
+                <p className="text-lg font-medium ml-14">You'll know tomorrow morning if someone is off.</p>
               </div>
             </div>
           </div>
@@ -350,8 +370,87 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Leaderboard Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container">
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div className="relative h-[500px] w-full rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl">
+                <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8d05adf7-b84f-4b84-bab3-c3abd6a2b9cc-QudpSluDHZnQTNnyoIzXwvXrSWzqlN.png" alt="Team Leaderboard" fill className="object-cover" />
+                <div className="absolute top-4 right-4 bg-[#9333EA]/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  TEAM PERFORMANCE
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9333EA]/10 rounded-full text-[#9333EA] text-xs font-bold tracking-wider mb-2">
+                  GAMIFIED EXCELLENCE
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-gradient-to-r from-[#9333EA] to-[#7E22CE] p-3 rounded-full shadow-md">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <h2 className="text-4xl font-black tracking-wide">Turn Performance Into a Game They Want to Win</h2>
+                </div>
+                <p className="text-lg text-gray-500 ml-14">
+                  Leaderboards aren't just for fun—they're scientifically proven to drive performance. We make
+                  excellence competitive.
+                </p>
+                <ul className="space-y-4 ml-14">
+                  <li className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white flex items-center justify-center mt-1 shadow-sm">
+                      <Trophy className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold">Real-time performance rankings</p>
+                      <p className="text-sm text-gray-500">See who's leading and who's improving fastest</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white flex items-center justify-center mt-1 shadow-sm">
+                      <Trophy className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold">Achievement badges and rewards</p>
+                      <p className="text-sm text-gray-500">
+                        Unlock recognition for mastering skills and hitting targets
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white flex items-center justify-center mt-1 shadow-sm">
+                      <Trophy className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold">Team competitions and challenges</p>
+                      <p className="text-sm text-gray-500">
+                        Create healthy competition that drives collective improvement
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-6 w-6 rounded-full bg-gradient-to-r from-[#9333EA] to-[#7E22CE] text-white flex items-center justify-center mt-1 shadow-sm">
+                      <Trophy className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold">Personalized improvement goals</p>
+                      <p className="text-sm text-gray-500">
+                        Each team member gets targets that stretch but don't break them
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <div className="pt-4 ml-14">
+                  <p className="text-xl font-bold">When excellence is visible, it becomes contagious.</p>
+                  <p className="text-lg text-gray-600">
+                    Your top performers become the standard everyone aspires to reach.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Industries Section */}
-        <section id="industries" className="py-20 bg-gray-50">
+        <section id="industries" className="py-20 bg-white">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9333EA]/10 rounded-full text-[#9333EA] text-xs font-bold tracking-wider mb-2">
@@ -554,7 +653,7 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-[#9333EA]/10 to-white">
+<section className="py-20 w-full bg-gradient-to-r from-[#9333EA]/10 via-[#9333EA]/5 to-[#9333EA]/10 flex flex-col items-center justify-center">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-4xl font-black tracking-wide sm:text-5xl">
@@ -627,7 +726,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 bg-gray-50">
+      <footer className="border-t border-gray-200 bg-gray-50 w-full flex justify-center">
         <div className="container py-12">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
@@ -688,7 +787,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="#features"
+                    href="/features"
                     className="text-sm text-gray-600 hover:text-[#9333EA] transition-colors duration-300"
                   >
                     Features
@@ -696,14 +795,17 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="#how-it-works"
+                    href="/how-it-works"
                     className="text-sm text-gray-600 hover:text-[#9333EA] transition-colors duration-300"
                   >
                     How It Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm text-gray-600 hover:text-[#9333EA] transition-colors duration-300">
+                  <Link
+                    href="/pricing"
+                    className="text-sm text-gray-600 hover:text-[#9333EA] transition-colors duration-300"
+                  >
                     Pricing
                   </Link>
                 </li>

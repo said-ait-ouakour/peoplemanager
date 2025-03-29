@@ -99,10 +99,10 @@ export default function Header({ currentPath = "", includeSecurityLink = false }
               Book a Demo
             </Button>
           </nav>
-          <Button 
-            variant="outline" 
-            size="icon" 
-            className="md:hidden" 
+          <Button
+            variant="outline"
+            size="icon"
+            className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg
@@ -123,9 +123,9 @@ export default function Header({ currentPath = "", includeSecurityLink = false }
             </svg>
           </Button>
         </div>
-        
+
         {/* Mobile Menu */}
-        {true && (
+        {mobileMenuOpen && (
           <div className="absolute top-24 left-0 right-0 md:hidden bg-white border-t border-gray-200 py-4 shadow-md z-50">
             <div className="container flex flex-col space-y-4">
               <Link
@@ -206,9 +206,8 @@ export default function Header({ currentPath = "", includeSecurityLink = false }
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-medium ${
-                currentPath === item.href ? "text-[#9333EA]" : "text-gray-600 hover:text-primary"
-              } transition-colors duration-300`}
+              className={`text-sm font-medium ${currentPath === item.href ? "text-[#9333EA]" : "text-gray-600 hover:text-primary"
+                } transition-colors duration-300`}
             >
               {item.label}
             </Link>
@@ -220,10 +219,10 @@ export default function Header({ currentPath = "", includeSecurityLink = false }
             Book a Demo
           </Button>
         </nav>
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="md:hidden" 
+        <Button
+          variant="outline"
+          size="icon"
+          className="md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <svg
@@ -253,9 +252,8 @@ export default function Header({ currentPath = "", includeSecurityLink = false }
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium px-4 py-2 ${
-                  currentPath === item.href ? "text-[#9333EA] bg-gray-50" : "text-gray-600 hover:bg-gray-50"
-                }`}
+                className={`text-sm font-medium px-4 py-2 ${currentPath === item.href ? "text-[#9333EA] bg-gray-50" : "text-gray-600 hover:bg-gray-50"
+                  }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

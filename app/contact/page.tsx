@@ -2,13 +2,85 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, MapPin, Mail } from "lucide-react"
+import { ArrowRight, MapPin, Mail, CheckCircle, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { usePathname } from "next/navigation"
 import Header from "@/components/header"
+import { useState } from "react"
 
 export default function Contact() {
   const pathname = usePathname();
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  
+  // Submission state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.company) {
+      setSubmitStatus('error');
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+    
+    try {
+      const response = await fetch('https://hook.eu2.make.com/8exvmjey7eqh6slpasxg8bo1pib7i5zd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+      
+      // Success
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      setErrorMessage('Something went wrong. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-white text-gray-900">
       {/* Header/Navigation */}
@@ -59,36 +131,61 @@ export default function Contact() {
               <div className="space-y-6">
                 <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-200 transition-all duration-300 hover:shadow-2xl">
                   <h3 className="text-2xl font-bold mb-6 text-center">Apply for Access</h3>
-                  <form className="space-y-4">
+                  
+                  {/* Form Status Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="mb-6 p-3 bg-green-50 border border-green-200 rounded-md flex items-center text-green-700">
+                      <CheckCircle className="h-5 w-5 mr-2" />
+                      <p>Application submitted successfully! We'll be in touch soon.</p>
+                    </div>
+                  )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="mb-6 p-3 bg-red-50 border border-red-200 rounded-md flex items-center text-red-700">
+                      <AlertCircle className="h-5 w-5 mr-2" />
+                      <p>{errorMessage}</p>
+                    </div>
+                  )}
+                  
+                  <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="grid gap-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Full Name
+                        Full Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         id="name"
                         placeholder="John Smith"
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9333EA] focus-visible:ring-offset-2"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="grid gap-2">
                       <label htmlFor="email" className="text-sm font-medium">
-                        Email
+                        Email <span className="text-red-500">*</span>
                       </label>
                       <input
                         id="email"
                         type="email"
                         placeholder="john@company.com"
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9333EA] focus-visible:ring-offset-2"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="grid gap-2">
                       <label htmlFor="company" className="text-sm font-medium">
-                        Company Name
+                        Company Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         id="company"
                         placeholder="Acme Inc."
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9333EA] focus-visible:ring-offset-2"
+                        value={formData.company}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                     <div className="grid gap-2">
@@ -99,13 +196,18 @@ export default function Contact() {
                         id="message"
                         rows={4}
                         className="flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9333EA] focus-visible:ring-offset-2"
+                        value={formData.message}
+                        onChange={handleChange}
                       ></textarea>
                     </div>
                     <Button
                       className="w-full bg-[#9333EA] hover:bg-[#7E22CE] transition-all duration-300 transform hover:scale-105"
                       size="lg"
+                      type="submit"
+                      disabled={isSubmitting}
                     >
-                      Submit Application <ArrowRight className="ml-2 h-4 w-4" />
+                      {isSubmitting ? 'Submitting...' : 'Submit Application'} 
+                      {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
                     </Button>
                   </form>
                 </div>
